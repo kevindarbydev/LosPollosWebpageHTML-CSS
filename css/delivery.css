@@ -1,0 +1,161 @@
+@charset "utf-8";
+
+/* Purpose: CSS document for project */
+/* Developed by: Filipe Moreira, Kevin D, Hong Lin */
+/* Script Date: September 15, 2021 */
+
+body {
+    margin: auto;
+    max-width: 1200px;
+    min-width: 800px;    
+}
+
+#mainHeading{
+    text-align: center;
+    color: white;  
+    font-family: 'Lemon', cursive;  
+}
+
+#mainHeading{
+    text-align: center;
+    color: white;  
+    font-family: 'Lemon', cursive;  
+}
+
+
+#container{
+    background-image: url(/images/background.jpg);
+    height: 1000px;
+}
+
+
+aside h2{
+    padding: 10px;
+}
+
+main h3{
+    padding: 15px 0
+}
+
+#appdownload {
+    padding-top: 350px;
+}
+
+#appstore {
+    padding-right: 23px;
+}
+
+#googleplay {
+    padding-top: 20px;
+}
+
+footer {
+    background-color: #9E2A2B;
+    text-align: center;
+    position: relative;
+    bottom: 0px;
+}
+
+footer h2 {
+    display: inline;
+    margin-right: auto;
+    text-align: center;
+    padding: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 12px;
+    left: 80px;
+    color: white;
+}
+
+footer h3 {
+    text-align: center;
+    padding-bottom: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 10px;
+    color: white;
+}
+
+
+
+#mContainer{
+     background-image: url(/images/background.jpg);
+    height: 940px;
+}
+
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+
+.col-25,
+.col-50,
+.col-50-bill,
+.col-50-pc,
+.col-75 {
+  padding: 0 16px;
+  
+}
+.col-50-bill{
+  width: 45%;
+}
+.col-50-pc{
+  width: 25%;
+  
+}
+
+
+.container {
+  background-color: #E09F3E;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  margin: 10px 320px;
+  width: 500px;
+}
+
+input[type=text] {
+  width: 80%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: #fff0d9;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+  color:rgb(0, 0, 0);
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+#submitBtn {
+  background-color:#540B0E;
+  color: rgb(255, 255, 255);
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+#submitBtn:hover {
+  background-color: green;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}

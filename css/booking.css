@@ -1,0 +1,341 @@
+@charset "utf-8";
+
+/* Purpose: CSS document for booking */
+/* Developed by: Hong Lin */
+/* Script Date: Sep 2021 */
+
+/*******************************/
+/********* Index CSS *********/
+/*******************************/
+
+@import url("https://fonts.googleapis.com/css2?family=Frijole&family=Lemon&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Frijole&family=Lemon&family=Special+Elite&display=swap");
+
+body {
+  margin: auto;
+  max-width: 1200px;
+  min-width: 800px;
+  max-height: 1685px;
+  box-shadow: #ddbdbd 0.5em 0.8em 1em;
+}
+
+header {
+  background-color: #540b0e;
+  height: 200px;
+}
+
+header img {
+  width: 150px;
+  position: relative;
+  right: 430px;
+}
+
+header h1 {
+  float: left;
+  position: relative;
+  left: 5em;
+  top: 55px;
+  font-weight: bold;
+  font-family: "Special Elite", cursive;
+  color: white;
+  font-size: 2.6em;
+}
+
+header nav {
+  background-color: #e09f3e;
+  height: 50px;
+  text-align: center;
+}
+
+nav h2 {
+  display: inline;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  padding: 15px;
+  position: relative;
+  top: 8px;
+  font-family: "Lemon", cursive;
+  font-size: large;
+}
+
+nav h2:hover {
+  background-color: #540b0e;
+}
+
+nav h2 a:hover {
+  color: #e09f3e;
+}
+
+nav h2 a {
+  text-decoration: none;
+  color: #540b0e;
+}
+
+/******* new Order form*********/
+/*******************************/
+span {
+  display: block;
+}
+
+h4 a {
+  margin-left: 210px;
+  color: #e09f3e;
+}
+.div {
+  background-image: url("../images/background.jpg");
+  background-repeat: repeat;
+  background-size: cover;
+  padding-bottom: 25px;
+  padding-top: 20px;
+  margin-bottom: 0;
+
+  height: auto;
+}
+.div2 {
+  float: left;
+  margin-left: 45px;
+  margin-right: 0px;
+  margin-top: 50px;
+
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.01);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+.div1 {
+  float: left;
+  margin-left: 30px;
+  margin-top: 50px;
+}
+
+footer {
+  clear: both;
+}
+h3 {
+  text-align: left;
+  color: #e09f3e;
+  margin-left: 20px;
+}
+.div table {
+  width: 550px;
+  margin-left: 30px;
+}
+#datep {
+  margin-left: 450px;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+#datep input {
+  text-align: center;
+  width: 100px;
+}
+
+legend {
+  margin-left: 30px;
+  font-size: 20px;
+}
+input,
+#prod,
+#prod1,
+#prod2,
+#prod3,
+#qty,
+#qty1,
+#qty2,
+#qty3,
+.fieldlabel,
+#cmonth,
+#cyear {
+  border: solid 0.1px #e09f3e;
+  border-radius: 5px;
+}
+#prod,
+#prod1,
+#prod2,
+#prod3 {
+  width: 150px;
+}
+.fieldlabel {
+  margin-right: 368px;
+  text-align: center;
+}
+.order {
+  margin-bottom: 70px;
+  margin-top: -20px;
+}
+video {
+  margin-left: 65px;
+}
+legend,
+td {
+  color: #e09f3e;
+}
+
+@media screen and (min-device-width: 400px) and( max-device-width:800px) {
+  .div {
+    width: 600px;
+  }
+}
+
+/*********  footer CSS *********/
+#appdownloadleft1 {
+  clear: left;
+  margin-left: 230px;
+  margin-bottom: 20px;
+}
+
+#appdownloadright1 {
+  float: right;
+  margin-right: 230px;
+  margin-top: -62px;
+}
+
+footer {
+  background-color: #9e2a2b;
+  text-align: center;
+  position: relative;
+  bottom: 0px;
+}
+
+footer h2 {
+  display: inline;
+  margin-right: auto;
+  padding: 10px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 12px;
+  color: white;
+}
+
+footer h3 {
+  padding-bottom: 10px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 10px;
+  color: white;
+}
+#btnCancel {
+  margin-left: 35px;
+  background-color: linen;
+}
+#btnNext {
+  margin-left: 395px;
+  background-color: linen;
+}
+
+/*************clock**************/
+.clock {
+  width: 250px;
+  height: 250px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  border: 2px solid black;
+  position: relative;
+  margin-top: 46px;
+}
+.clock .number {
+  --rotation: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform: rotate(var(--rotation));
+  font-size: 1.5rem;
+}
+.clock .number1 {
+  --rotation: 30deg;
+}
+.clock .number2 {
+  --rotation: 60deg;
+}
+.clock .number3 {
+  --rotation: 90deg;
+}
+.clock .number4 {
+  --rotation: 120deg;
+}
+.clock .number5 {
+  --rotation: 150deg;
+}
+.clock .number6 {
+  --rotation: 180deg;
+}
+.clock .number7 {
+  --rotation: 210deg;
+}
+.clock .number8 {
+  --rotation: 240deg;
+}
+.clock .number9 {
+  --rotation: 270deg;
+}
+.clock .number10 {
+  --rotation: 300deg;
+}
+.clock .number11 {
+  --rotation: 330deg;
+}
+.clock .number12 {
+  --rotation: 360deg;
+}
+
+.clock .hand {
+  --rotation: 0;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  border: 1px solid white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transform-origin: bottom;
+  z-index: 10;
+  transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+.clock .hand.second {
+  width: 3px;
+  height: 45%;
+  background-color: red;
+}
+
+.clock .hand.minute {
+  width: 7px;
+  height: 40%;
+  background-color: black;
+}
+.clock .hand.hour {
+  width: 10px;
+  height: 30%;
+  background-color: black;
+}
+
+.clock::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  width: 15px;
+  height: 15px;
+  z-index: 11;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+.area {
+  height: 350px;
+  width: 350px;
+  display: flex;
+  margin-top: 30px;
+  margin-left: 115px;
+  margin-bottom: 50px;
+  justify-content: center;
+  background: linear-gradient(
+    to right,
+    hsl(300, 100%, 50%),
+    hsl(285, 100%, 50%)
+  );
+
+  border-radius: 50%;
+}
