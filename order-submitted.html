@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Filipe Moreira, Kevin Darby, Hong Lin" />
+    <title>Los Pollos Hermanos | Order Complete</title>
+
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/promotions.css">
+    <link rel="icon" href="images/Los_Pollos_Hermanos_logo.png" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Frijole&family=Lemon&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Frijole&family=Lemon&family=Special+Elite&display=swap');
+
+        h1 {
+            color: black;
+            text-align: center;
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        #content {
+            width: 500px;
+            height: 300px;
+            background-color: #E09F3E;
+            margin: auto;
+            margin-bottom: 100px;
+            margin-top: 50px;
+        }
+        #container{
+    background-image: url(/images/background.jpg);
+    height: 660px;
+}
+
+        /*
+        will create seperate stylesheet later on
+        */
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <img src="images/Los_Pollos_Hermanos_logo.png" alt="Logo of Los Pollos Hermanos" />
+            <h1>Fast-food restaurant</h1>
+             <nav>
+            <h2><a href="index.html">Home</a></h2>
+            <h2><a href="check-menu.html">Menu</a></h2>
+            <h2><a href="promotions.html">Promotions</a></h2>          
+                      <h2><a href="delivery.html">Delivery</a></h2>
+           </nav>
+        </header>
+        <main>
+
+            <div id="content">
+                <h1>Thank you for your order!</h1>
+                <h3>We are preparing your meal right away</h3>
+
+                <h3>Your order number is: </h3>
+
+                <h3 id="orderNum">XXXXX</h3>
+            </div>
+        </main>
+
+
+
+
+        <footer>
+            <h2>About Us</h2>
+            <h2>Privacy Policy</h2>
+            <h2>Terms & Conditions</h2>
+            <h2>FAQs</h2>
+            <h2>Delivery</h2>
+            <h3>&copy;2021 Los Pollos Hermanos'. All Rights Reserved.</h3>
+        </footer>
+
+        <script>
+            function orderNumGen() {
+
+                let num;
+                num = (Math.random() * 10000).toFixed(0);
+                return num;
+            }
+
+
+            $(document).ready(function () {
+                $("#orderNum").text(orderNumGen());
+
+            });
+
+
+        </script>
+</body>
+
+</html>

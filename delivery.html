@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Filipe Moreira, Kevin Darby, Hong Lin" />
+    <title>Los Pollos Hermanos | Delivery</title>
+
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/delivery.css">
+
+    <link rel="icon" href="images/Los_Pollos_Hermanos_logo.png" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Frijole&family=Lemon&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Frijole&family=Lemon&family=Special+Elite&display=swap');
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="mContainer">
+        <header>
+            <img src="images/Los_Pollos_Hermanos_logo.png" alt="Logo of Los Pollos Hermanos" />
+            <h1>Fast-food restaurant</h1>
+             <nav>
+            <h2><a href="index.html">Home</a></h2>
+            <h2><a href="check-menu.html">Menu</a></h2>
+            <h2><a href="promotions.html">Promotions</a></h2>          
+                      <h2><a href="delivery.html">Delivery</a></h2>
+           </nav>
+        </header>
+
+        <h1 id="mainHeading">Delivery</h1>
+        <div id="formContainer">
+            <div class="row">
+                <div class="col-75">
+                    <div class="container">
+                        <form name="deliveryForm">
+
+                            <div class="row">
+                                <div class="col-50-bill">
+                                    <h3><u>Billing Address</u></h3>
+                                    <label for="fname">Full Name</label>
+                                    <input type="text" id="fname" name="firstname" placeholder="Pollos Hermanos"
+                                        maxlength="50">
+                                    <label for="email">Email</label>
+                                    <input type="text" id="email" name="email" placeholder="p@hermanos.com"
+                                        maxlength="30">
+                                    <label for="adr"> Address</label>
+                                    <input type="text" id="adr" name="address" placeholder="123 W. 123 Street"
+                                        maxlength="30">
+                                    <label for="city">City</label>
+                                    <input type="text" id="city" name="city" placeholder="Montreal" maxlength="30">
+
+                                    <div class="row">
+
+                                        <div class="col-50-pc">
+                                            <label for="zip">Postal Code</label>
+                                            <input type="text" id="postalC" name="postalC" placeholder="H1H 1H1"
+                                                maxlength="7">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-50">
+                                    <h3><u>Payment</u></h3>
+
+
+                                    <label for="cname">Name on Card</label>
+                                    <input type="text" id="ccname" name="cardname" placeholder="Los Pollos Hermanos"
+                                        maxlength="50">
+                                    <label id="ccinput" for="ccnum">Credit card number</label>
+                                    <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444"
+                                        maxlength="16">
+                                    <label for="expmonth">Exp Date</label>
+                                    <div class="col-50-pc"></div>
+                                    <input type="text" id="expDate" name="expDate" placeholder="10/21" maxlength="5">
+
+                                    <div class="row">
+
+                                        <div class="col-50">
+                                            <label for="cvv">CVV</label>
+                                            <input type="text" id="cvv" name="cvv" placeholder="352" maxlength="3">
+
+
+                                            <label for="coupon">Coupon Code</label>
+                                            <input type="text" id="coupon" name="coupon" placeholder="12345">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <button id="submitBtn">Submit Order</button>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="hide"></div>
+        <footer>
+            <h2>About Us</h2>
+            <h2>Privacy Policy</h2>
+            <h2>Terms & Conditions</h2>
+            <h2>FAQs</h2>
+            <h2>Delivery</h2>
+            <h3>&copy;2021 Los Pollos Hermanos'. All Rights Reserved.</h3>
+        </footer>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                document.getElementById('submitBtn').addEventListener('click', subForm);
+            });
+
+            // each if statement checks if each form field is empty, throws window alert if field is empty
+            function validateForm() {
+                //alert("called");
+                let name = document.forms["deliveryForm"]["fname"].value;
+                if (name == "") {
+                    alert("Please enter your name.");                   
+                    return false;
+                }
+
+                let email = document.forms["deliveryForm"]["email"].value;
+                if (email == "" || email.length < 5) {
+                    alert("Please enter a valid email address.");
+                    return false;
+                }
+                let adr = document.forms["deliveryForm"]["adr"].value;
+                if (adr == "") {
+                    alert("Please enter your address.");
+                    return false;
+                }
+                let city = document.forms["deliveryForm"]["city"].value;
+                if (city == "") {
+                    alert("Please enter your city.");
+                    return false;
+                }
+                let postalC = document.forms["deliveryForm"]["postalC"].value;
+                if (postalC == "" || postalC.length < 6) {
+                    alert("Please enter your postal code in the following format: \"H1H 1H1\".");
+                    return false;
+                }
+                let ccname = document.forms["deliveryForm"]["ccname"].value;
+                if (ccname == "") {
+                    alert("Please enter your name as it appears on your credit card.");
+                    return false;
+                }
+                let ccnum = document.forms["deliveryForm"]["ccnum"].value;
+                if (ccnum == "") {
+                    alert("Please enter your credit card number as it appears on your credit card.");
+                    return false;
+                }
+                let expDate = document.forms["deliveryForm"]["expDate"].value;
+                if (expDate == "" || expDate.length != 5) {
+                    alert("Please enter the expiry date of your credit card in the following format: \"09/21\"");
+                    return false;
+                }
+                let cvv = document.forms["deliveryForm"]["cvv"].value;
+                if (cvv.length != 3 || cvv == "") {
+                    alert("Please enter your cvv.");
+                    return false;
+                }
+                return true;
+            }
+
+            let dataCSV = [];
+            const subForm = (ev) => {
+               
+
+                
+                if (validateForm() == false) {
+                    ev.preventDefault();
+                    
+                } else {
+                    let form = {
+                        fname: document.forms["deliveryForm"]["fname"].value,
+                        email: document.forms["deliveryForm"]["email"].value,
+                        adr: document.forms["deliveryForm"]["adr"].value,
+                        city: document.forms["deliveryForm"]["city"].value,
+                        postalC: document.forms["deliveryForm"]["postalC"].value,
+                        ccname: document.forms["deliveryForm"]["ccname"].value,
+                        ccnum: document.forms["deliveryForm"]["ccnum"].value,
+                        expDate: document.forms["deliveryForm"]["expDate"].value,
+                        cvv: document.forms["deliveryForm"]["cvv"].value
+
+                    }
+                    dataCSV.push(form);
+                    document.forms[0].reset();
+                    console.warn('added', { dataCSV });
+                    let hiddenText = document.querySelector('#hide');
+                    hiddenText.textContent = '\n' + JSON.stringify(dataCSV, '\t', 2);
+                    //  alert('success added to storage');
+                    localStorage.setItem('submittedForm', JSON.stringify(dataCSV));
+                    window.open("order-submitted.html");
+                }
+            }
+
+        </script>
+
+</body>
+
+</html>

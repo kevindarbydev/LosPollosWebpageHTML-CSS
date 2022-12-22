@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Filipe Moreira, Kevin Darby, Hong Lin" />
+    <title>Los Pollos Hermanos | Promotions</title>
+
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/promotions.css">
+    <link rel="icon" href="images/Los_Pollos_Hermanos_logo.png" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Frijole&family=Lemon&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Frijole&family=Lemon&family=Special+Elite&display=swap');
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <img src="images/Los_Pollos_Hermanos_logo.png" alt="Logo of Los Pollos Hermanos" />
+            <h1>Fast-food restaurant</h1>
+           <nav>
+            <h2><a href="index.html">Home</a></h2>
+            <h2><a href="check-menu.html">Menu</a></h2>
+            <h2><a href="promotions.html">Promotions</a></h2>          
+                      <h2><a href="delivery.html">Delivery</a></h2>
+           </nav>
+        </header>
+
+        <h1 id="mainHeading">Deals & Promotions</h1>
+
+        <aside id="leftSidebar">
+            <h1 class="sidebarHeading">Drinks $1<br />All Summer!</h1>
+            <br />
+            <figure>
+                <img id="drinkPic" src="images/drink1.jpg" alt="One of our delicious and affordable beverages!"
+                    title="Only 1$, all summer long!">
+            </figure>
+            <br />
+            <figure>
+                <img id="secondDrinkPic" src="images/secondDrink1.jpeg"
+                    alt="One of our delicious and affordable beverages!" title="Only 1$, all summer long!">
+            </figure>
+            <br />
+        </aside>
+        <main>
+            <div id="mainContent">
+                <h1>Try our new vegan burger!<br />Only
+                    $7.99&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>25% OFF!</span></h1>
+
+                <figure>
+                    <img id="veganBurgerPic" src="images/vegan_burguers.jpg" alt="Our new, delicious vegan burger."
+                        title="Available for a limited time only!">
+                </figure>
+                <br />
+                <h3>Comes with lettuce, tomato, onion and a delicious meatless patty!</h3>
+                <h3>For a limited time only</h3>
+            </div>
+        </main>
+        <aside id="rightSidebar">
+            <h1 class="sidebarHeading">Click here for a coupon</h1>
+            <p>Limit once per customer</p>
+            <br />
+            <div id="discountGenerator">
+                <br />
+                <div id="internalDiv">Click here!
+                </div>
+                <br /><br /><br />
+                <p id="hidden">Congratulations! You get 10% off your meal! Here's your coupon code:
+
+                </p>
+                <p id="codeSpan"></p>
+
+
+
+            </div>
+            <button id="copyCode">Copy to Clipboard</button>
+
+            <figure id="downloads">
+                <img id="googleplay" href="" src="/images/Google-Play-resized.png">
+                <img id="appstore" href="" src="images/App-Store-resized.jpg">
+            </figure>
+    </div>
+    </aside>
+    </div>
+    <footer>
+        <h2>About Us</h2>
+        <h2>Privacy Policy</h2>
+        <h2>Terms & Conditions</h2>
+        <h2>FAQs</h2>
+        <h2>Delivery</h2>
+        <h3>&copy;2021 Los Pollos Hermanos'. All Rights Reserved.</h3>
+    </footer>
+    <script>
+
+        var copyBtn = document.getElementById("copyCode");
+        var couponCode = document.getElementById("codeSpan").innerText;
+
+        // Copy to Clipboard function for the coupon code
+        function copyText(textToBeCopied) {
+            if (!textToBeCopied) {
+                return;
+            }
+            let couponC = textToBeCopied.innerText;
+            let temp = document.createElement('input');
+            temp.setAttribute('value', couponC);
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand('copy');
+            temp.parentNode.removeChild(temp);
+        }
+
+        // calls copyText function when copy btn is clicked
+        copyBtn.onclick = function () {
+            copyText(document.getElementById("codeSpan"));
+        }
+
+
+        function generateCode() {
+            let coupon = rollDice();
+
+
+            let code = "";
+
+            if (coupon < 10) {
+                code = "E4F0N";
+                return code;
+            }
+            else if (coupon < 20) {
+                code = "ZYA31";
+                return code;
+            }
+            else {
+                code = "B3F1Q";
+                return code;
+            }
+        }
+        var picNum = 1;
+        var drink = document.getElementById("drinkPic");
+        var secondDrink = document.getElementById("secondDrinkPic");
+
+        // method for 1st img "#drinkPic"
+
+        setInterval(function () {
+            if (picNum == 1) {
+                drink.src = "/images/drink" + picNum + ".jpg";
+                picNum = picNum + 1;
+            }
+            if (picNum == 2) {
+                drink.src = "/images/drink" + picNum + ".jpg";
+                picNum = picNum + 1;
+            } else {
+                drink.src = "/images/drink" + picNum + ".jpg";
+                picNum = 1;
+            }
+        }, 5000);
+
+        // method for 2nd img "#secondDrinkPic"
+        setInterval(function () {
+
+            if (picNum == 1) {
+                secondDrink.src = "/images/secondDrink" + picNum + ".jpeg";
+                picNum = picNum + 1;
+            }
+            if (picNum == 2) {
+                secondDrink.src = "/images/secondDrink" + picNum + ".jpeg";
+                picNum = picNum + 1;
+
+            } else {
+                secondDrink.src = "/images/secondDrink" + picNum + ".jpeg";
+                picNum = 1;
+
+            }
+
+        }, 2500);
+
+
+        function rollDice() {
+            let randomNum;
+            randomNum = Math.random() * 25;
+            return randomNum;
+        }
+        function generateCoupon() {
+            let coupon = rollDice();
+            let text = "";
+
+            if (coupon < 10) {
+                text = "Congratulations! You get 10% off your meal! Here's your coupon code: ";
+                return text;
+
+            }
+            else if (coupon < 20) {
+                text = "Congratulations! You get 20% off your meal! Here's your coupon code: ";
+                return text;
+
+            }
+            else {
+                text = "Congratulations! Your meal is free! Here's your coupon code: ";
+                return text;
+            }
+        }
+
+        /*        
+        **JQuery Methods**        
+        div with id #internalDiv should trigger an event to generate a coupon for the user when the user clicks on the div on the page.
+                */
+        //#hidden element reveals itself on click
+        $(document).ready(function () {
+            $("#internalDiv").click(function () {
+                $("#hidden").css("display", "inline");
+                $("#codeSpan").css("display", "inline");
+                $("#copyCode").css("display", "inline");
+            })
+        });
+
+        // generate coupon text by reading the random # generated
+        $(document).ready(function () {
+            $("#hidden").text(generateCoupon());
+            $("#codeSpan").text(generateCode());
+        });
+    </script>
+</body>
+
+</html>
